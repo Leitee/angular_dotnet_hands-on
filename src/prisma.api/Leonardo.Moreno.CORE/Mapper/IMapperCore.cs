@@ -1,13 +1,16 @@
 ﻿using AutoMapper;
+using Leonardo.Moreno.CORE.Contract.Model;
 using System.Collections.Generic;
 
 namespace Leonardo.Moreno.CORE.Mapper
 {
-    public interface IMapperCore<in TInputEntity, out TOutputEntity>
+    public interface IMapperCore<TEntity, TDto> //where TEntity : IEntity where TDto : IDto<IEntity>
     {
-        void SetMapperConfiguration(IMapper pMapperConfig);
-        TOutputEntity MapEntity(TInputEntity pEntity);
-        IEnumerable<TOutputEntity> MapEntity(IEnumerable<TInputEntity> pEntities);
+        void SetEntityToDtoMapConfiguration(IMapper pMapperConfig);
+        TDto MapToDto(TEntity pEntity);
+        IEnumerable<TDto> MapToDto(IEnumerable<TEntity> pEntities);
+        TEntity MapToEntity(TDto pDto);
+        IEnumerable<TEntity> MapToEntity(IEnumerable<TDto> pDto);
     }
     public interface IMapperCore
     {

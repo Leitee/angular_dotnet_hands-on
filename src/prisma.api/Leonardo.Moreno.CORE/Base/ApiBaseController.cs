@@ -14,7 +14,7 @@ namespace Leonardo.Moreno.CORE.Base
         public ApiBaseController(ILogger logger)
         {
             _logger = logger;
-            _logger?.LogInformation($"Calling controller at: {DateTime.UtcNow}");
+            _logger?.LogInformation($"Iniciando constructor {nameof(ApiBaseController)} a las: {DateTime.UtcNow}");
         }
     }
 }

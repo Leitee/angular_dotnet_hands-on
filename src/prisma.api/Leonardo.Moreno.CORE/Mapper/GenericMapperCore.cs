@@ -3,25 +3,27 @@ using System.Collections.Generic;
 
 namespace Leonardo.Moreno.CORE.Mapper
 {
-    public abstract class GenericMapperCore<TInputEntity, TOutputEntity> : IMapperCore<TInputEntity, TOutputEntity>
+    public abstract class GenericMapperCore<TEntity, TDto> : IMapperCore<TEntity, TDto>
     {
-        protected IMapper MappingConfiguration { get; set; }
+        protected IMapper EntityToDtoMapConfiguration { get; set; }
+        protected IMapper DtoToEntityMapConfiguration { get; set; }
 
         public GenericMapperCore()
         {
-            MappingConfiguration = CreateMapConfiguration();
+            EntityToDtoMapConfiguration = CreateEntityToDtoMapConfiguration();
+            DtoToEntityMapConfiguration = CreateDtoToEntityMapConfiguration();
         }
 
         protected IMapper DefaultMapConfiguration()
         {
             return new MapperConfiguration(c =>
             {
-                //c.ForAllMaps((typeMap, mappingExpression) => mappingExpression.MaxDepth(2));
-                c.CreateMap<TInputEntity, TOutputEntity>().MaxDepth(2);
+                c.CreateMap<TEntity, TDto>().MaxDepth(2);
             }).CreateMapper();
         }
 
-        protected abstract IMapper CreateMapConfiguration();
+        protected abstract IMapper CreateEntityToDtoMapConfiguration();
+        protected abstract IMapper CreateDtoToEntityMapConfiguration();
 
         public virtual void SetMapperConfiguration(IMapperConfigurationExpression configurationExpression)
         {
@@ -29,21 +31,39 @@ namespace Leonardo.Moreno.CORE.Mapper
             var expression = configurationExpression;
         }
 
-        public virtual void SetMapperConfiguration(IMapper pMapperConfig)
+        public virtual void SetEntityToDtoMapConfiguration(IMapper pMapperConfig)
         {
-            MappingConfiguration = pMapperConfig;
+            EntityToDtoMapConfiguration = pMapperConfig;
         }
 
-        public virtual TOutputEntity MapEntity(TInputEntity entity)
+        public virtual void SetDtoToEntityMapConfiguration(IMapper pMapperConfig)
+        {
+            DtoToEntityMapConfiguration = pMapperConfig;
+        }
+
+
+        public virtual TDto MapToDto(TEntity entity)
         {
             if (entity == null) return default;
-            return MappingConfiguration.Map<TOutputEntity>(entity);
+            return EntityToDtoMapConfiguration.Map<TDto>(entity);
         }
 
-        public virtual IEnumerable<TOutputEntity> MapEntity(IEnumerable<TInputEntity> entity)
+        public virtual IEnumerable<TDto> MapToDto(IEnumerable<TEntity> entity)
         {
             if (entity == null) return null;
-            return MappingConfiguration.Map<IEnumerable<TOutputEntity>>(entity);
+            return EntityToDtoMapConfiguration.Map<IEnumerable<TDto>>(entity);
+        }
+
+        public virtual TEntity MapToEntity(TDto pDto)
+        {
+            if (pDto == null) return default;
+            return DtoToEntityMapConfiguration.Map<TEntity>(pDto);
+        }
+
+        public virtual IEnumerable<TEntity> MapToEntity(IEnumerable<TDto> pDto)
+        {
+            if (pDto == null) return null;
+            return DtoToEntityMapConfiguration.Map<IEnumerable<TEntity>>(pDto);
         }
     }
 

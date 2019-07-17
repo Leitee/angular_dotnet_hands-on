@@ -8,9 +8,28 @@ namespace Prisma.Demo.BUSINESS.Mappers
 {
     public class CompetidorMapper : GenericMapperCore<Competidor, CompetidorDto>
     {
-        protected override IMapper CreateMapConfiguration()
+        protected override IMapper CreateDtoToEntityMapConfiguration()
         {
-            return DefaultMapConfiguration();
+            return new MapperConfiguration(c =>
+            {
+                c.CreateMap<CompetidorDto, Competidor>();
+
+                c.CreateMap<MarcaDto, Marca>();
+                c.CreateMap<ZonaDePrecioDto, ZonaDePrecio>();
+
+            }).CreateMapper();
+        }
+
+        protected override IMapper CreateEntityToDtoMapConfiguration()
+        {
+            return new MapperConfiguration(c =>
+            {
+                c.CreateMap<Competidor, CompetidorDto>();
+
+                c.CreateMap<Marca, MarcaDto>();
+                c.CreateMap<ZonaDePrecio, ZonaDePrecioDto>();
+
+            }).CreateMapper();
         }
     }
 }

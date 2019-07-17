@@ -39,6 +39,13 @@ namespace Pandora.NetStandard.Data.Dals
         /// </remarks>
         protected Dictionary<Type, object> Repositories { get; private set; }
 
+        public RepositoryProvider(TContext dbContext, RepositoryFactories<TContext> repositoryFactories)
+        {
+            DbContext = dbContext;
+            _repositoryFactories = repositoryFactories;
+            Repositories = new Dictionary<Type, object>();
+        }
+
         /// <summary>
         /// Get or create-and-cache the default <see cref="IRepository{T}"/> for an entity of type T.
         /// </summary>

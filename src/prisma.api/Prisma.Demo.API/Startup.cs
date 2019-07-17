@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Leonardo.Moreno.CORE.Base;
+﻿using Leonardo.Moreno.CORE.Base;
 using Leonardo.Moreno.CORE.Contract.Data;
 using Leonardo.Moreno.CORE.Mapper;
 using Microsoft.AspNetCore.Builder;
@@ -12,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Serialization;
 using Pandora.NetStandard.Data.Dals;
 using Prisma.Demo.BUSINESS.Services;
@@ -45,11 +40,11 @@ namespace Prisma.Demo.API
                 {
                     jop.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                     jop.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
-                    jop.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
                 })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddApiVersioning(o => {
+            services.AddApiVersioning(o =>
+            {
                 o.ReportApiVersions = true;
                 o.AssumeDefaultVersionWhenUnspecified = true;
                 o.DefaultApiVersion = new ApiVersion(1, 0);

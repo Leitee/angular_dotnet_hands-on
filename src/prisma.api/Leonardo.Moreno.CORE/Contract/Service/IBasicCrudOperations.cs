@@ -9,6 +9,6 @@ namespace Pandora.NetStandard.Core.Interfaces
         Task<SvcSingleResponse<TDto>> GetByIdAsync(int pId);
         Task<SvcSingleResponse<TDto>> CreateAsync(TDto pDto);
         Task<SvcSingleResponse<bool>> UpdateAsync(TDto pDto);
-        Task<SvcSingleResponse<bool>> DeleteAsync(TDto pDto);
+        Task<SvcSingleResponse<bool>> DeleteAsync(int pId);
     }
 }
