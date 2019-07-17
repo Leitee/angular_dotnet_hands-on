@@ -120,7 +120,13 @@ namespace Prisma.Demo.BUSINESS.Services
             try
             {
                 var entity = _mapper.MapToEntity(pDto);
+
+                //https://github.com/aspnet/EntityFrameworkCore/issues/9803#issue-257405136
+                //to avoid fix at nested object updating 
+                await _uow.GetRepository<Marca>().UpdateAsync(entity.Marca);
+                await _uow.GetRepository<ZonaDePrecio>().UpdateAsync(entity.ZonaDePrecio);
                 await _uow.GetRepository<Competidor>().UpdateAsync(entity);
+
                 response.Data = await _uow.CommitAsync();
             }
             catch (Exception ex)

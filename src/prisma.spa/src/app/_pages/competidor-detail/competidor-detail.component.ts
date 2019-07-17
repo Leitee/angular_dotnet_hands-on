@@ -27,7 +27,7 @@ export class CompetidorDetailComponent implements OnInit {
 
     this.route.params.subscribe(
       par => {
-        if (par)
+        if (par && !Number.isNaN(Number(par.id)))
           this.loadCompDetail(par.id);
       });
   }
@@ -63,19 +63,23 @@ export class CompetidorDetailComponent implements OnInit {
     this.compForm.setValue(this.currentCompet);
   }
 
-  async onSubmit(comp: Competidor) {
+  onSubmit(comp: Competidor) {
 
-    let resul = (this.isEditView)
-      ? await this.prismaSvc.updateCompetidor(comp).toPromise()
-      : await this.prismaSvc.createCompetidor(comp).toPromise();
-
-    if (resul)
-      this.router.navigate(['/competidor'])
+    if (this.isEditView) {
+      this.prismaSvc.updateCompetidor(comp).subscribe(
+        resul => { if (resul) this.router.navigate(['/competidor']); }
+      );
+    }
+    else {
+      this.prismaSvc.createCompetidor(comp).subscribe(
+        resul => { if (resul.id > 0) this.router.navigate(['/competidor']); }
+      );
+    }
   }
 
   // convenience getter for easy access to form fields
   get getForm(): Competidor { return this.compForm.value; }
 
-  get isEditView(): boolean { return true; }
+  get isEditView(): boolean { return this.currentCompet !== undefined; }
 
 }

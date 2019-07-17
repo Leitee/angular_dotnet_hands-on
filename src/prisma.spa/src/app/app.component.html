@@ -9,7 +9,7 @@
         <!-- This fills the remaining space of the current row -->
         <span style="flex: 1 1 auto"></span>
         <span>
-            <button mat-button mat-raised-button (click)="agregar()" mat-icon-button mattooltip="Nuevo Competidor">
+            <button mat-button mat-raised-button [routerLink]="['/competidor/create']" mat-icon-button mattooltip="Nuevo Competidor">
                 <i class="material-icons">add</i>
             </button>
         </span>
