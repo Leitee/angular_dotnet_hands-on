@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="3.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.7.12" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Leonardo.Moreno.CORE\Leonardo.Moreno.CORE.csproj" />
+    <ProjectReference Include="..\Prisma.Demo.BUSINESS\Prisma.Demo.BUSINESS.csproj" />
+    <ProjectReference Include="..\Prisma.Demo.DATA\Prisma.Demo.DATA.csproj" />
+    <ProjectReference Include="..\Prisma.Demo.Model\Prisma.Demo.MODEL.csproj" />
+  </ItemGroup>
+
+</Project>
