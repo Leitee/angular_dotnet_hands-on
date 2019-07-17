@@ -50,7 +50,7 @@ namespace Prisma.Demo.API.Controllers
             if (ModelState.IsValid)
             {
                 var response = await _competidorSvc.CreateAsync(competidorDto);
-                return Created(new Uri($"{Request.Path}/{response.Data.Id}", UriKind.Relative), response.Data);//return 201 created and its data entity 
+                return Created(new Uri($"{Request.Path}/{response.Data.Id}", UriKind.Relative), response);//return 201 created and its data entity 
             }
 
             return BadRequest(ModelState);
