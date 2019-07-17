@@ -36,10 +36,6 @@ mat-card {
   height: 99%;
 }
 
-mat-icon {
-  margin-right: 15px;
-}
-
 mat-button-toggle-group {
   font-weight: 500;
   margin-right: 30px;
@@ -74,6 +70,6 @@ mat-button-toggle-group {
 }
 
 .tab-content {
+  margin-top: 30px;
   overflow: auto;
-    height: 275px;
 }

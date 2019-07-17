@@ -1,9 +1,16 @@
-﻿<mat-toolbar *ngIf="currentUser" color="primary">
+﻿<mat-toolbar color="primary">
     <mat-toolbar-row>
         <span>
             <button style="font-size: large" mat-button routerLink="/">
-                <i class="material-icons">school</i>
+                <i class="material-icons">home</i>
                 <span style="margin-left: 10px">Prisma Demo</span>
+            </button>
+        </span>
+        <!-- This fills the remaining space of the current row -->
+        <span style="flex: 1 1 auto"></span>
+        <span>
+            <button mat-button mat-raised-button (click)="agregar()" mat-icon-button mattooltip="Nuevo Competidor">
+                <i class="material-icons">add</i>
             </button>
         </span>
     </mat-toolbar-row>

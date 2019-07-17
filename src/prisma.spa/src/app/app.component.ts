@@ -9,4 +9,7 @@ export class AppComponent implements OnInit {
 
     ngOnInit(): void {
     }
+
+    agregar(): void {
+    }
 }
