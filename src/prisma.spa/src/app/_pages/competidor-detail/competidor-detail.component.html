@@ -1,3 +1,76 @@
-<app-content-wrapper headerTitle="Detalle Competidor">
-  TODO: Put Admin content here!
+<app-content-wrapper headerTitle="Detalle Competidor" headerIcon="assessment">
+  <form [formGroup]="compForm" (submit)="onSubmit(compForm.value)">
+    <mat-form-field *ngIf="isEditView">
+      <mat-label>Id</mat-label>
+      <input matInput formControlName="id" readonly>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Codigo</mat-label>
+      <input matInput formControlName="codigo">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Latitud</mat-label>
+      <input matInput formControlName="latitud">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Longitud</mat-label>
+      <input matInput formControlName="longitud">
+    </mat-form-field>
+    <mat-checkbox class="example-margin" color="primary" formControlName="marcador" [labelPosition]="'before'">
+      Marcador
+    </mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" formControlName="observar" [labelPosition]="'before'">
+      Ovservar
+    </mat-checkbox>
+    <mat-form-field>
+      <mat-label>Calle</mat-label>
+      <input matInput formControlName="calle">
+    </mat-form-field>
+
+    <mat-divider style="margin: 30px 0px"></mat-divider>
+
+    <div formGroupName="marca">
+      <mat-form-field *ngIf="isEditView">
+        <mat-label>Id</mat-label>
+        <input matInput formControlName="id" readonly>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Codigo</mat-label>
+        <input matInput formControlName="codigo">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre">
+      </mat-form-field>
+    </div>
+
+    <mat-divider style="margin: 30px 0px"></mat-divider>
+
+    <div formGroupName="zonaDePrecio">
+      <mat-form-field *ngIf="isEditView">
+        <mat-label>Id</mat-label>
+        <input matInput formControlName="id" readonly>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Codigo</mat-label>
+        <input matInput formControlName="codigo">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre">
+      </mat-form-field>
+    </div>
+
+    <mat-divider style="margin: 30px 0px"></mat-divider>
+
+    <div>
+        <button mat-raised-button color="accent" [routerLink]="['/competidor']"><mat-icon>arrow_back</mat-icon>Volver</button>
+        <button mat-raised-button color="primary" style="float: right" type="submit" [disabled]="compForm.pristine">{{isEditView ? 'Modificar' : 'Guardar'}}</button>
+    </div>
+
+  </form>
 </app-content-wrapper>

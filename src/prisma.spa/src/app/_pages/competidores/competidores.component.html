@@ -18,25 +18,23 @@
           <div class="tab-content">
             <mat-form-field appearance="outline">
               <mat-label>Codigo</mat-label>
-              <input matInput disabled value="{{compet.codigo}}">
+              <input matInput readonly value="{{compet.codigo}}">
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Calle</mat-label>
-              <input matInput disabled value="{{compet.calle}}">
+              <input matInput readonly value="{{compet.calle}}">
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Coordenada</mat-label>
-              <input matInput disabled value="Latitud: {{compet.latitud}}">
+              <input matInput readonly value="Latitud: {{compet.latitud}}">
               <mat-divider style="margin: 10px 0px"></mat-divider>
-              <input matInput disabled value="Longitud: {{compet.longitud}}">
+              <input matInput readonly value="Longitud: {{compet.longitud}}">
             </mat-form-field>
-            <mat-checkbox class="example-margin" [(ngModel)]="compet.marcador" 
-              [labelPosition]="'before'" disabled>
+            <mat-checkbox class="example-margin" [(ngModel)]="compet.marcador" [labelPosition]="'before'" disabled>
               Marcador
             </mat-checkbox>
 
-            <mat-checkbox class="example-margin" [(ngModel)]="compet.observar" 
-              [labelPosition]="'before'" disabled>
+            <mat-checkbox class="example-margin" [(ngModel)]="compet.observar" [labelPosition]="'before'" disabled>
               Ovservar
             </mat-checkbox>
           </div>
@@ -46,15 +44,15 @@
           <div class="tab-content">
             <mat-form-field appearance="outline">
               <mat-label>Id</mat-label>
-              <input matInput disabled value="{{compet.marca.id}}">
+              <input matInput readonly value="{{compet.marca.id}}">
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Nombre</mat-label>
-              <input matInput disabled value="{{compet.marca.nombre}}">
+              <input matInput readonly value="{{compet.marca.nombre}}">
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Codigo</mat-label>
-              <input matInput disabled value="{{compet.marca.codigo}}">
+              <input matInput readonly value="{{compet.marca.codigo}}">
             </mat-form-field>
           </div>
         </mat-tab>
@@ -63,22 +61,22 @@
           <div class="tab-content">
             <mat-form-field appearance="outline">
               <mat-label>Id</mat-label>
-              <input matInput disabled value="{{compet.zonaDePrecio.id}}">
+              <input matInput readonly value="{{compet.zonaDePrecio.id}}">
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Nombre</mat-label>
-              <input matInput disabled value="{{compet.zonaDePrecio.nombre}}">
+              <input matInput readonly value="{{compet.zonaDePrecio.nombre}}">
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Codigo</mat-label>
-              <input matInput disabled value="{{compet.zonaDePrecio.codigo}}">
+              <input matInput readonly value="{{compet.zonaDePrecio.codigo}}">
             </mat-form-field>
           </div>
         </mat-tab>
       </mat-tab-group>
 
       <mat-action-row>
-        <button mat-button mat-icon-button class="more-button" (click)="update(compet)">
+        <button mat-button mat-icon-button class="more-button" [routerLink]="['/competidor', compet.id]">
           <mat-icon color="primary">create</mat-icon>
         </button>
         <button mat-button mat-icon-button class="more-button" (click)="delete(compet)">

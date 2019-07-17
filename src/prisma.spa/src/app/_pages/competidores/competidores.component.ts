@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PrismaService } from '@/_services';
 import { Observable } from 'rxjs';
 import { Competidor } from '@/_models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-competidores',
@@ -13,20 +14,29 @@ export class CompetidoresComponent implements OnInit {
 
   private compListAsync: Observable<Array<Competidor>>;
 
-  constructor(private prismaSvc: PrismaService) { }
+  constructor(
+    private prismaSvc: PrismaService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.loadList();
+  }
+
+  loadList() {
     this.compListAsync = this.prismaSvc.getAllCompetidor();
   }
 
-  update(c: Competidor){
-    console.log(c)
-    return false;
+  update(compet: Competidor) {
+    this.router.navigate(['/competidor/' + compet.id, compet])
   }
 
-  delete(c: Competidor){
-    console.log(c)
-    return false;
+  delete(compet: Competidor) {
+    this.prismaSvc.deleteCompetidor(compet.id).subscribe(
+      (value: boolean) => {
+        if (value)
+          this.loadList();
+      }
+    );
   }
-
 }

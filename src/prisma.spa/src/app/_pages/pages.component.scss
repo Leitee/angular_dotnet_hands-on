@@ -43,30 +43,8 @@ mat-button-toggle-group {
   margin-bottom: 8px;
 }
 
-#bt1.mat-button-toggle-checked {
-  background-color: green;  
-}
-#bt2.mat-button-toggle-checked {
-  background-color: red;
-}
-#bt3.mat-button-toggle-checked {
-  background-color: yellow;
-}
 .example-margin {
   margin: 0 10px;
-}
-
-.stepper-button {
-  &.prev{
-    float: left;
-  }
-  &.next{
-    float: right;
-  }
-}
-
-.step-form {
-    text-align: -webkit-center;
 }
 
 .tab-content {

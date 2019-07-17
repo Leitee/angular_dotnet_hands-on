@@ -26,9 +26,9 @@ export class PrismaService extends BaseService<Competidor> {
         return this.post(compObj);
     }
 
-    public updateCompetidor(compObj: Competidor, compId: number): Observable<boolean> {
+    public updateCompetidor(compObj: Competidor): Observable<boolean> {
         this.path = "competidor";
-        return this.put(compId, compObj);
+        return this.put(compObj.id, compObj);
     }
 
     public deleteCompetidor(compId: number): Observable<boolean> {
