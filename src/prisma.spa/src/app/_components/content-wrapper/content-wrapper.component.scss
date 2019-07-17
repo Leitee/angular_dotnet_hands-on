@@ -1,0 +1,21 @@
+.content-wrapper {
+    border: 1px solid rgba(0,0,0,.03);
+    box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+    margin: 65px;
+}
+
+.content-wrapper-body {
+    padding: 30px;
+    background-color: #fafafa;
+}
+
+.content-wrapper-header {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 8px 20px;
+    border-bottom: solid 1px green;
+    color: rgba(0,0,0,.54);
+    background: rgba(0,0,0,.03);
+}

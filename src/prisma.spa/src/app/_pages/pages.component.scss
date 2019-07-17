@@ -1,0 +1,79 @@
+mat-card-header {
+    border-bottom: solid 1px green;
+    justify-content: center;
+}
+
+mat-card-content {
+    text-align: -webkit-center;
+    height: 180px;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-form-field {
+  margin-right: 12px;
+}
+
+mat-card-actions {
+  border-top: solid 1px green;
+  button{
+    width: 50%;
+    margin: 0px;
+  }
+
+}
+
+mat-card {
+  width: 99%;
+  height: 99%;
+}
+
+mat-icon {
+  margin-right: 15px;
+}
+
+mat-button-toggle-group {
+  font-weight: 500;
+  margin-right: 30px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+#bt1.mat-button-toggle-checked {
+  background-color: green;  
+}
+#bt2.mat-button-toggle-checked {
+  background-color: red;
+}
+#bt3.mat-button-toggle-checked {
+  background-color: yellow;
+}
+.example-margin {
+  margin: 0 10px;
+}
+
+.stepper-button {
+  &.prev{
+    float: left;
+  }
+  &.next{
+    float: right;
+  }
+}
+
+.step-form {
+    text-align: -webkit-center;
+}
+
+.tab-content {
+  overflow: auto;
+    height: 275px;
+}

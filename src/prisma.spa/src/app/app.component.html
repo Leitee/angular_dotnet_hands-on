@@ -1,0 +1,12 @@
+﻿<mat-toolbar *ngIf="currentUser" color="primary">
+    <mat-toolbar-row>
+        <span>
+            <button style="font-size: large" mat-button routerLink="/">
+                <i class="material-icons">school</i>
+                <span style="margin-left: 10px">Prisma Demo</span>
+            </button>
+        </span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<app-loader></app-loader>
+<router-outlet></router-outlet>
