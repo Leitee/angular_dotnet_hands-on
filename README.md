@@ -1,7 +1,7 @@
 # Prisma Demo
 
 
-![Alt text](https://pandorasistemas.visualstudio.com/SchoolMngr/_apis/build/status/SchoolMngr-WebAPI-CI "Azure pipeline")
+[![Build Status](https://pandorasistemas.visualstudio.com/PrismaDemo/_apis/build/status/prisma.spa-container-CI?branchName=master)](https://pandorasistemas.visualstudio.com/PrismaDemo/_build/latest?definitionId=10&branchName=master)
 
 
 ## Algunos features
