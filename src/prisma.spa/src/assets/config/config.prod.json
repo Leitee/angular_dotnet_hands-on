@@ -15,7 +15,7 @@
         "clientId": "<dev-guid-here>"
     },
     "server": {
-        "apiUrl": "https://localhost:44300/api/v1",  
+        "apiUrl": "http://localhost:8080/api/v1",  
         "authUrl": "https://localhost:44366/auth/v1"
     },
     "mapConfig": {

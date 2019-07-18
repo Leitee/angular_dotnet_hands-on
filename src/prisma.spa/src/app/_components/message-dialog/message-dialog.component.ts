@@ -10,8 +10,11 @@ import { DialogData, DialogIconEnum } from '@/_models';
 export class MessageDialogComponent implements OnInit {
 
   @ViewChild('iconElem', { static: true }) iconElem: MatIcon;
+  iconType: string;
 
-  constructor(public dialogRef: MatDialogRef<MessageDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+  constructor(public dialogRef: MatDialogRef<MessageDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    this.iconType = data.icon;
+   }
 
   ngOnInit() {
     let stylesElem = this.iconElem._elementRef.nativeElement.style;

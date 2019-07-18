@@ -25,7 +25,7 @@ namespace Prisma.Demo.API.Controllers
         [HttpGet()]
         public async Task<IActionResult> GetCompetidor()
         {
-            _logger?.LogDebug($"{nameof(GetCompetidor)}' se ha invocado");
+            _logger?.LogInformation($"{nameof(GetCompetidor)}' se ha invocado");
             var response = await _competidorSvc.GetAllAsync();
             return response.ToHttpResponse();
         }
@@ -33,7 +33,7 @@ namespace Prisma.Demo.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCompetidorById(int? id)
         {
-            _logger?.LogDebug($"{nameof(GetCompetidorById)}' se ha invocado con id: {id}");
+            _logger?.LogInformation($"{nameof(GetCompetidorById)}' se ha invocado con id: {id}");
             if (ModelState.IsValid && id.HasValue)
             {
                 var response = await _competidorSvc.GetByIdAsync(id.Value);
@@ -46,7 +46,7 @@ namespace Prisma.Demo.API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateCompetidor([FromBody] CompetidorDto competidorDto)
         {
-            _logger?.LogDebug($"{nameof(CreateCompetidor)}' se ha invocado");
+            _logger?.LogInformation($"{nameof(CreateCompetidor)}' se ha invocado");
             if (ModelState.IsValid)
             {
                 var response = await _competidorSvc.CreateAsync(competidorDto);
@@ -59,7 +59,7 @@ namespace Prisma.Demo.API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCompetidor([FromBody] CompetidorDto competidorDto, int? id)
         {
-            _logger?.LogDebug($"{nameof(UpdateCompetidor)}' se ha invocado con id: {id}");
+            _logger?.LogInformation($"{nameof(UpdateCompetidor)}' se ha invocado con id: {id}");
             if (ModelState.IsValid && id.HasValue && id.Value == competidorDto.Id)
             {
                 var response = await _competidorSvc.UpdateAsync(competidorDto);
@@ -72,7 +72,7 @@ namespace Prisma.Demo.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCompetidor(int? id)
         {
-            _logger?.LogDebug($"{nameof(DeleteCompetidor)}' se ha invocado con id: {id}");
+            _logger?.LogInformation($"{nameof(DeleteCompetidor)}' se ha invocado con id: {id}");
             if (ModelState.IsValid && id.HasValue)
             {
                 var response = await _competidorSvc.DeleteAsync(id.Value);

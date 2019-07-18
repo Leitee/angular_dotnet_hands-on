@@ -11,11 +11,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
-    "build": "ng build",
+    "build": "npm run clean:dist && ng build",
+    "build:prod": "npm run build -- --prod",
     "build:github": "ng build --prod --base-href 'https://leitee.github.io/SchoolMngDemo/' npx angular-cli-ghpages --dir=dist/prisma-demo/",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "clean:dist": "rimraf -- dist"
   },
   "private": true,
   "dependencies": {

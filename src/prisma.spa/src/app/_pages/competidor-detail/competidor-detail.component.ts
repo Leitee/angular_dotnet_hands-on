@@ -13,7 +13,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 export class CompetidorDetailComponent implements OnInit {
 
   private currentCompet: Competidor;
-  private compForm: FormGroup;
+  public compForm: FormGroup;
 
   constructor(
     private route: ActivatedRoute,

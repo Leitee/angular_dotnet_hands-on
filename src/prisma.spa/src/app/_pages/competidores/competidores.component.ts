@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class CompetidoresComponent implements OnInit {
 
-  private compListAsync: Observable<Array<Competidor>>;
+  public compListAsync: Observable<Array<Competidor>>;
 
   constructor(
     private dialogService: DialogService,

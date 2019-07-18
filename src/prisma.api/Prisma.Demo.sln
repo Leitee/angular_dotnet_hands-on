@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Leonardo.Moreno.CORE", "Leo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prisma.Demo.DATA", "Prisma.Demo.DATA\Prisma.Demo.DATA.csproj", "{BEB9458B-9B81-4BD5-BA89-9A34D9CA24A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prisma.Demo.BUSINESS", "Prisma.Demo.BUSINESS\Prisma.Demo.BUSINESS.csproj", "{B70C360C-0D66-4853-8194-8273E5BE9E1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prisma.Demo.BUSINESS", "Prisma.Demo.BUSINESS\Prisma.Demo.BUSINESS.csproj", "{B70C360C-0D66-4853-8194-8273E5BE9E1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
