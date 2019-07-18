@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_infrastructure", "_infrast
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_test", "_test", "{4810B5A2-86D1-49F1-9A20-CD927C55F80F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prisma.Demo.MODEL", "Prisma.Demo.Model\Prisma.Demo.MODEL.csproj", "{50AA7DE7-B239-46CC-B455-1ABF3765BCA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prisma.Demo.MODEL", "Prisma.Demo.MODEL\Prisma.Demo.MODEL.csproj", "{50AA7DE7-B239-46CC-B455-1ABF3765BCA8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Leonardo.Moreno.CORE", "Leonardo.Moreno.CORE\Leonardo.Moreno.CORE.csproj", "{A55E7E1D-12D9-4ED7-B8F7-38B08B7D3569}"
 EndProject
