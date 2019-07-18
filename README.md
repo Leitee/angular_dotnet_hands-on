@@ -15,22 +15,22 @@
 * Aplicación desplegada en Docker hub mediante CD para descarga y testearla posteriormente. 
 * El cliente web maneja los errores con un Interceptor como asi tmb las llamadas http a la Api.
 
-# Luego de hacer pull del repositorio se puede testear el projecto de 2 maneras. 
+## Luego de hacer pull del repositorio se puede testear el projecto de 2 maneras. 
 
 ## 1) Bajar ambas imágenes y corre usando docker
 
-*docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Devadmin321' -p 5433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
-*sqlcmd -U sa -P Devadmin321 -S localhost,5433 -i src/db_script/createDB.sql
-*docker run --rm -d -p 88:80/tcp leitee/prisma.api:pod
-*docker run --rm -d -p 8080:80/tcp leitee/prisma.spa:latest
+> * docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Devadmin321' -p 5433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
+> * sqlcmd -U sa -P Devadmin321 -S localhost,5433 -i src/db_script/createDB.sql
+> * docker run --rm -d -p 88:80/tcp leitee/prisma.api:pod
+> * docker run --rm -d -p 8080:80/tcp leitee/prisma.spa:latest
 
 ## 2) Corre en modo local
 
 ### Api REST
-*dotnet ef database update
-*dotnet build src/prisma.api/Prisma.Demo.sln
-*dotnet run --project src/prisma.api/Prisma.Demo.API/Prisma.Demo.API.csproj
+> * dotnet ef database update
+> * dotnet build src/prisma.api/Prisma.Demo.sln
+> * dotnet run --project src/prisma.api/Prisma.Demo.API/Prisma.Demo.API.csproj
 
 ### Cliente Web SPA
-npm install
-npm start
+> * npm install
+> * npm start

@@ -69,7 +69,7 @@
 
     <div>
         <button mat-raised-button color="accent" [routerLink]="['/competidor']"><mat-icon>arrow_back</mat-icon>Volver</button>
-        <button mat-raised-button color="primary" style="float: right" type="submit" [disabled]="compForm.pristine">{{isEditView ? 'Modificar' : 'Guardar'}}</button>
+        <button mat-raised-button color="primary" style="float: right" type="submit" [disabled]="compForm.pristine || compForm.invalid">{{isEditView ? 'Modificar' : 'Guardar'}}</button>
     </div>
 
   </form>
