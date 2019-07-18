@@ -13,7 +13,6 @@ export interface AppConfig {
         requireAuth: boolean;
         tenant: string;
         clientId: string;
-
     };
     server: {
         apiUrl: string;

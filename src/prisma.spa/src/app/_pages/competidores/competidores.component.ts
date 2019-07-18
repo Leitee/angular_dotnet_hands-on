@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PrismaService } from '@/_services';
+import { PrismaService, DialogService } from '@/_services';
 import { Observable } from 'rxjs';
 import { Competidor } from '@/_models';
 import { Router } from '@angular/router';
@@ -15,6 +15,7 @@ export class CompetidoresComponent implements OnInit {
   private compListAsync: Observable<Array<Competidor>>;
 
   constructor(
+    private dialogService: DialogService,
     private prismaSvc: PrismaService,
     private router: Router
   ) { }
@@ -32,11 +33,17 @@ export class CompetidoresComponent implements OnInit {
   }
 
   delete(compet: Competidor) {
-    this.prismaSvc.deleteCompetidor(compet.id).subscribe(
-      (value: boolean) => {
-        if (value)
-          this.loadList();
+    this.dialogService.openQuestionDialog("Esta seguro que desea eliminar?").subscribe(
+      resul => {
+        if(resul){
+          this.prismaSvc.deleteCompetidor(compet.id).subscribe(
+            (value: boolean) => {
+              if (value)
+                this.loadList();
+            }
+          );
+        }
       }
-    );
+    )    
   }
 }

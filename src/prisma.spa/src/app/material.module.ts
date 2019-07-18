@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, 
-    MatButtonModule, 
-    MatSidenavModule, 
-    MatIconModule, 
-    MatListModule, 
-    MatMenuModule, 
-    MatGridListModule, 
-    MatCardModule, 
-    MatExpansionModule, 
-    MatFormFieldModule, 
+import {
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatMenuModule,
+    MatGridListModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
     MatDialogModule,
@@ -20,7 +21,8 @@ import { MatToolbarModule,
     MatTabsModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MAT_DIALOG_DEFAULT_OPTIONS
 } from '@angular/material';
 
 @NgModule({
@@ -71,6 +73,9 @@ import { MatToolbarModule,
         MatTableModule,
         MatPaginatorModule,
         MatSortModule
+    ],
+    providers: [
+        { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } }
     ]
 })
 export class MaterialModule { }
